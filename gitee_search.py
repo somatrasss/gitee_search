@@ -28,17 +28,29 @@ def read_exce():
 		i = i+1
 		url = 'https://search.gitee.com/?q='+strtext+'&skin=rec&type=repository&pageno='+str(i)
 		response = requests.get(url,headers=header)
+		
 		reurl = re.findall('<a href="(.+?)" class="ns" target="_blank">',response.text)
 		rename = re.findall('                                        (.*)</a>',response.text)
+		#print (rename)
+		
 		try:
 			if i == m:
-				for n in range(z):
-					reurl[n] = reurl[n]
-					rename[n] = rename[n].replace('</span>','')
-					rename[n] = rename[n].replace('<span class="hl">','')
-					print (reurl[n+1],rename[n])
-					#print (rename[n])
-					continue
+				if z==0:
+					for n in range(11):
+						reurl[n] = reurl[n]
+						rename[n] = rename[n].replace('</span>','')
+						rename[n] = rename[n].replace('<span class="hl">','')
+						print (reurl[n+1],rename[n])
+						#print (rename[n])
+						continue
+				else:
+					for n in range(z):
+						reurl[n] = reurl[n]
+						rename[n] = rename[n].replace('</span>','')
+						rename[n] = rename[n].replace('<span class="hl">','')
+						print (reurl[n+1],rename[n])
+						#print (rename[n])
+						continue
 			else:
 				for n in range(10):
 					reurl[n] = reurl[n]
