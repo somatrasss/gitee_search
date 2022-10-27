@@ -1,6 +1,10 @@
  gitee网站源码搜索
+ 
+用法：
 
-https://user-images.githubusercontent.com/69829610/138823437-1befc367-20e0-4d2c-87ad-06c1e6a8f217.png
+python3 gitee_search.py
+
+
 
 更新日记
 
